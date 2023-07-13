@@ -32,15 +32,15 @@ module.exports = {
   // ],
 
   // Options for hosting serverless functions on Edgio
-  // serverless: {
-  //   // Set to true to include all packages listed in the dependencies property of package.json when deploying to Edgio.
-  //   // This option generally isn't needed as Edgio automatically includes all modules imported by your code in the bundle that
-  //   // is uploaded during deployment
-  //   // includeNodeModules: true,
-  //
-  //   // Include additional paths that are dynamically loaded by your app at runtime here when building the serverless bundle.
-  //   // include: ['views/**/*'],
-  // },
+  serverless: {
+    // Set to true to include all packages listed in the dependencies property of package.json when deploying to Edgio.
+    // This option generally isn't needed as Edgio automatically includes all modules imported by your code in the bundle that
+    // is uploaded during deployment
+    includeNodeModules: true,
+
+    // Include additional paths that are dynamically loaded by your app at runtime here when building the serverless bundle.
+    // include: ['views/**/*'],
+  },
 
   // The maximum number of URLs that will be concurrently prerendered during deployment when static prerendering is enabled.
   // Defaults to 200, which is the maximum allowed value.

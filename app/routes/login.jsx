@@ -2,7 +2,6 @@ import { json, redirect } from "@remix-run/node";
 import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 
-import { verifyLogin } from "~/models/user.server";
 import { createUserSession, getUserId } from "~/session.server";
 import { safeRedirect, validateEmail } from "~/utils";
 
@@ -40,8 +39,7 @@ export const action = async ({ request }) => {
     );
   }
 
-  const user = await verifyLogin(email, password);
-
+  const user = undefined;
   if (!user) {
     return json(
       { errors: { email: "Invalid email or password", password: null } },

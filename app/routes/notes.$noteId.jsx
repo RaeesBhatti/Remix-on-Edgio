@@ -7,14 +7,13 @@ import {
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
-import { deleteNote, getNote } from "~/models/note.server";
 import { requireUserId } from "~/session.server";
 
 export const loader = async ({ params, request }) => {
   const userId = await requireUserId(request);
   invariant(params.noteId, "noteId not found");
 
-  const note = await getNote({ id: params.noteId, userId });
+  const note = undefined;
   if (!note) {
     throw new Response("Not Found", { status: 404 });
   }

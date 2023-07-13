@@ -2,7 +2,6 @@ import { json, redirect } from "@remix-run/node";
 import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 
-import { createUser, getUserByEmail } from "~/models/user.server";
 import { createUserSession, getUserId } from "~/session.server";
 import { safeRedirect, validateEmail } from "~/utils";
 
@@ -39,7 +38,7 @@ export const action = async ({ request }) => {
     );
   }
 
-  const existingUser = await getUserByEmail(email);
+  const existingUser = undefined;
   if (existingUser) {
     return json(
       {
@@ -52,7 +51,7 @@ export const action = async ({ request }) => {
     );
   }
 
-  const user = await createUser(email, password);
+  const user = undefined;
 
   return createUserSession({
     redirectTo,

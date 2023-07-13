@@ -3,6 +3,8 @@ const express = require("express");
 
 const app = express();
 
+process.env.SESSION_SECRET = 'mysecret';
+
 // needs to handle all verbs (GET, POST, etc.)
 app.all(
   "*",

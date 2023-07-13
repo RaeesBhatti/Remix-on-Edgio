@@ -2,7 +2,6 @@ import { json, redirect } from "@remix-run/node";
 import { Form, useActionData } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 
-import { createNote } from "~/models/note.server";
 import { requireUserId } from "~/session.server";
 
 export const action = async ({ request }) => {
@@ -26,7 +25,7 @@ export const action = async ({ request }) => {
     );
   }
 
-  const note = await createNote({ body, title, userId });
+  const note = {};
 
   return redirect(`/notes/${note.id}`);
 };
